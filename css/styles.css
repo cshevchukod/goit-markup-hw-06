@@ -621,7 +621,9 @@ input {
   margin-left: 16px;
 }
 
-/* Modal / Backdrop */
+/* ========================
+   Modal / Backdrop
+   ======================== */
 
 .modal-overlay {
   position: fixed;
@@ -865,4 +867,13 @@ input {
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.04em;
+  color: #ffffff;
+  background-color: var(--logo-color);
+  cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-submit-btn:hover,
+.modal-submit-btn:focus {
+  background-color: var(--link-hover);
 }

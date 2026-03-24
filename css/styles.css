@@ -656,7 +656,13 @@ input {
   overflow: hidden;
 }
 
-/* Portfolio overlay — slides up from bottom on hover */
+/* Portfolio overlay — hidden on mobile, slides up from bottom on hover for tablet+ */
+
+@media (max-width: 767px) {
+  .portfolio-overlay {
+    display: none;
+  }
+}
 
 .portfolio-overlay {
   position: absolute;
@@ -935,7 +941,18 @@ input {
   flex-direction: column;
   padding: 72px 16px 40px;
   overflow-y: auto;
-  display: none;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-menu.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
 /* Hide mobile menu on tablet and above */
